@@ -15,8 +15,10 @@ initialization_required = True
 
 if isdir(GFW_LIST_DIR):
     if isdir(join(GFW_LIST_DIR, ".git")):
-        return_code = call(["cd", GFW_LIST_DIR, "&&", "git", "pull", "&&", "cd", "DIR"])
-        initialization_required = False if return_code == 0 else True
+        # return_code = call(["cd", GFW_LIST_DIR, "&&", "git", "pull", "&&", "cd", "DIR"])
+        # initialization_required = False if return_code == 0 else True
+        # todo test
+        initialization_required = False
     else:
         return_code = call(["rm", "-rf", GFW_LIST_DIR])
         if return_code == 0:
@@ -35,8 +37,10 @@ initialization_required = True
 
 if isdir(AD_BLOCK_DIR):
     if isdir(join(AD_BLOCK_DIR, ".git")):
-        return_code = call(["cd", AD_BLOCK_DIR, "&&", "git", "pull", "&&", "cd", "DIR"])
-        initialization_required = False if return_code == 0 else True
+        # return_code = call(["cd", AD_BLOCK_DIR, "&&", "git", "pull", "&&", "cd", "DIR"])
+        # initialization_required = False if return_code == 0 else True
+        # todo test
+        initialization_required = False
     else:
         return_code = call(["rm", "-rf", AD_BLOCK_DIR])
         if return_code == 0:
