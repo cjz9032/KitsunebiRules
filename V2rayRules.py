@@ -22,13 +22,13 @@ if isdir(GFW_LIST_DIR):
         if return_code == 0:
             initialization_required = True
         else:
-            stderr.write("发现损坏的 GFW List 目录，请手动删除 '%s' 目录后再次运行程序\n", GFW_LIST_DIR)
+            stderr.write("fond gfw")
             exit(-1)
 
 if initialization_required:
     return_code = call(["git", "clone", "https://github.com/gfwlist/gfwlist.git", GFW_LIST_DIR])
     if return_code != 0:
-        stderr.write("无法克隆 GFW List 至 '%s' 目录，请检查！\n", GFW_LIST_DIR)
+        stderr.write("clone gfw")
         exit(-1)
 
 initialization_required = True
@@ -42,13 +42,13 @@ if isdir(AD_BLOCK_DIR):
         if return_code == 0:
             initialization_required = True
         else:
-            stderr.write("发现损坏的 AD block 目录，请手动删除 '%s' 目录后再次运行程序\n", AD_BLOCK_DIR)
+            stderr.write("fond adb")
             exit(-1)
 
 if initialization_required:
     return_code = call(["git", "clone", "https://github.com/felix-fly/v2ray-adlist.git", AD_BLOCK_DIR])
     if return_code != 0:
-        stderr.write("无法克隆 AD Block 至 '%s' 目录，请检查！\n", AD_BLOCK_DIR)
+        stderr.write("clone adb")
         exit(-1)
 
 gfw_list_file = join(GFW_LIST_DIR, "gfwlist.txt")
